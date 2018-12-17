@@ -1,0 +1,67 @@
+ <div class="container">
+    <div class="row-fluid">
+      <form class="form-horizontal" (ngSubmit)="saveCustomer()" #customerForm="ngForm">
+        <fieldset>
+          <div id="legend">
+            <legend class="">Checkout</legend>
+          </div>
+
+          <!-- Name -->
+          <div class="control-group">
+            <label class="control-label"  for="firstName">Firstname</label>
+            <div class="controls">
+              <input required type="text" id="firstName" name="first"  [(ngModel)]="customer.firstName" class="input-xlarge">
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label"  for="lastName">LastName</label>
+            <div class="controls">
+              <input required type="text" #lastName="ngModel" id="lastName" name="last" placeholder="" [(ngModel)]="customer.lastName" class="input-xlarge">
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label"  for="email">Email</label>
+            <div class="controls">
+              <input required type="email" id="email" placeholder="" name="email" [(ngModel)]="customer.email" class="input-xlarge" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            </div>
+          </div>
+
+
+          <div class="control-group">
+            <label class="control-label" for="cardType"> CardType</label>
+            <div class="controls">
+              <select required name="type" [(ngModel)]="customer.creditCard.type" id="cardType">
+                <option *ngFor="let type of creditCardTypes" [value]="type">{{type}}</option>
+              </select>
+            </div>
+          </div>
+          <!-- Card Number -->
+          <div class="control-group">
+            <label class="control-label" for="email">Card Number</label>
+            <div class="controls">
+              <input required type="text" id="credit" name="credit" [(ngModel)]="customer.creditCard.number" placeholder="" class="input-xlarge" pattern="[0-9].{15}" >
+            </div>
+          </div>
+
+          <!-- Expiry-->
+          <div class="control-group">
+            <label class="control-label" for="expiry_month">Card Expiry Date</label>
+            <div class="controls">
+              <input required type="number" max="12" min="1" class="span3" name="expiry_month" id="expiry_month" [(ngModel)]="customer.creditCard.expirationMonth">
+              <input required type="number" max="2025" min="2018" class="span2" name="expiry_year" [(ngModel)]="customer.creditCard.expirationYear">
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="control-group">
+            <div class="controls">
+              <button type="submit" class="btn btn-success" [disabled]="!customerForm.form.valid">Pay Now</button>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>

@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Book} from '../Book';
+import {OrderService} from '../order.service';
 
 @Component({
   selector: 'app-book-details',
@@ -12,12 +13,16 @@ export class BookDetailsComponent implements OnInit {
   @Output()
   public back = new EventEmitter();
 
-  constructor() {
+  constructor(private orderService: OrderService) {
 
   }
 
   ngOnInit() {
 
+  }
+
+  orderBook(book: Book) {
+    this.orderService.orderBook(book);
   }
 
 }

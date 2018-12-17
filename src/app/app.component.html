@@ -1,9 +1,15 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<app-catalog></app-catalog>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/home" routerLinkActive="active-link">Home</a></li>
+      <li><a routerLink="/catalog" routerLinkActive="active-link">Catalog</a></li>
+      <li><a routerLink="/customer-details" routerLinkActive="active-link">Customer</a></li>
+    </ul>
+  </div>
+</nav>
+
 
 <router-outlet></router-outlet>

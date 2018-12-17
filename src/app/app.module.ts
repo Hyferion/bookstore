@@ -1,18 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CatalogComponent } from './catalog/catalog.component';
-import { BookDetailsComponent } from './book-details/book-details.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {CatalogComponent} from './catalog/catalog.component';
+import {BookDetailsComponent} from './book-details/book-details.component';
 import {CatalogService} from './catalog.service';
 import {FormsModule} from '@angular/forms';
+import {HomeComponent} from './home/home.component';
+import {CustomerDetailsComponent} from './customer-details/customer-details.component';
+import {RouterModule, Routes} from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     CatalogComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    HomeComponent,
+    CustomerDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -22,4 +27,7 @@ import {FormsModule} from '@angular/forms';
   providers: [CatalogService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+
+export class AppModule {
+}
