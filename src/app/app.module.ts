@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {HomeComponent} from './home/home.component';
 import {CustomerDetailsComponent} from './customer-details/customer-details.component';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {RouterModule, Routes} from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [CatalogService],
   bootstrap: [AppComponent]
